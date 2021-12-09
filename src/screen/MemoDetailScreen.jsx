@@ -16,7 +16,7 @@ export default function MemoDetailScreen() {
           今日の夕飯には以下が必要。 ・りんご ・ばなな ・ミートボール
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }}>＋</CircleButton>
+      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
     </View>
   );
 }
