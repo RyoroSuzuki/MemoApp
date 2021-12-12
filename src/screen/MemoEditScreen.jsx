@@ -3,15 +3,17 @@ import {
   View,
   StyleSheet,
   TextInput,
-  KeyboardAvoidingView,
+  Alert,
+  // KeyboardAvoidingView,
 } from 'react-native';
 import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
+import KeyboardSafeView from '../components/KeyboardSafeView';
 
 // eslint-disable-next-line react/function-component-definition
 export default function MemoEditScreen() {
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="height">
+    <KeyboardSafeView style={styles.container}>
       <AppBar />
       <View style={styles.inputContainer}>
         <TextInput
@@ -20,8 +22,13 @@ export default function MemoEditScreen() {
           style={styles.input}
         />
       </View>
-      <CircleButton name="check" />
-    </KeyboardAvoidingView>
+      <CircleButton
+        name="check"
+        onPress={() => {
+          Alert.alert('ああああ');
+        }}
+      />
+    </KeyboardSafeView>
   );
 }
 
