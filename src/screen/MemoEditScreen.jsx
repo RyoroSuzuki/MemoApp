@@ -6,15 +6,14 @@ import {
   Alert,
   // KeyboardAvoidingView,
 } from 'react-native';
-import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeyboardSafeView';
 
 // eslint-disable-next-line react/function-component-definition
-export default function MemoEditScreen() {
+export default function MemoEditScreen(props) {
+  const { navigation } = props;
   return (
     <KeyboardSafeView style={styles.container}>
-      <AppBar />
       <View style={styles.inputContainer}>
         <TextInput
           value="買い物リストの詳細文だよ"
@@ -25,7 +24,7 @@ export default function MemoEditScreen() {
       <CircleButton
         name="check"
         onPress={() => {
-          Alert.alert('ああああ');
+          navigation.goBack();
         }}
       />
     </KeyboardSafeView>
